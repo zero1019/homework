@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .parallax .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
+        .parallax-1 .bg {
+            background-image: url('images/hibiki1017.jpg'); /* 確保路徑正確 */
+        }
+
+        .parallax-2 .bg {
+            background-image: url('images/聖誕節fn.jpg'); /* 確保路徑正確 */
+        }
+
+        .parallax .text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            position: relative;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">
+            <img src="images/OIP.jpg" alt="LOGO" style="height: 40px;">
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="webdesign.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+     
+      <div class="parallax parallax-1">
+        <div class="bg"></div>
+        <div class="text" id="text1">ZERO09 PORTFOLIO</div>
+    </div>
+    <div class="content">
+        <h1>About My Portfolio</h1>
+        <p>Welcome to my portfolio page, where you are welcome to get to know me and view my usual artworks.</p>
+    </div>
+    <div class="parallax parallax-2">
+        <div class="bg"></div>
+        <div class="text" id="text2">Welcome to share with each other</div>
+    </div>
+    <div class="content">
+        <p>If you like my style, you can find contact information at the bottom of the page and communicate with each other.</p>
+    </div>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+
+            const text1 = document.getElementById("text1");
+            const text2 = document.getElementById("text2");
+
+            // 計算滾動偏移量
+            const offset1 = Math.min(scrollY / viewportHeight * 100, 100);
+            const offset2 = Math.min((scrollY - viewportHeight) / viewportHeight * 100, 100);
+
+            // 第一段文字滾動效果
+            if (scrollY < viewportHeight) {
+                text1.style.transform = `translateX(${offset1 * 5}px)`;
+                text1.style.opacity = 1 - offset1 / 100;
+            } else {
+                text1.style.opacity = 0;
+            }
+
+            // 第二段文字滾動效果
+            if (scrollY > viewportHeight && scrollY < viewportHeight * 2) {
+                text2.style.transform = `translateX(${offset2 * 5}px)`;
+                text2.style.opacity = 1 - offset2 / 100;
+            } else {
+                text2.style.opacity = 0;
+            }
+        });
+    </script>  
+      
+    <header id="TOP" class="text-center p-5">
+        <h1>ZERO09</h1>
+        <h1>PORTFOLIO</h1>   
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="#intro" class="btn btn-outline-dark">ABOUT ME</a>
+            <a href="#portfolio" class="btn btn-outline-dark">PORTFOLIO</a>
+            <a href="#contact" class="btn btn-outline-dark">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section id="intro" class="p-5" style="background-color: #000000;">
+        <div class="row">
+        <div class="col-12 col-sm-6 text-center">
+            <img src="images/_DSC4946.jpg" style="width: 400px; height: 400px; object-fit: cover; border-radius: 20px" class="img-fluid" alt="images">
+        </div>
+        <div class="col-12 col-sm-6">
+            
+            <h2><strong>ABOUNT ME</strong> </h2>
+            <br>
+            <br>
+            <h4> <strong>陳俊諺</strong> </h4>
+            <h4><strong>TAN JUN YAN</strong> </h4>
+            <br>
+            <p><strong>學歷 Educational： </strong>  國立臺中科技大學多媒體設計系 </p>
+            <p><strong>美術風格 Art style： </strong> 日系2d動漫風格 日系建築物與歷史物件</p>
+            <p><strong>軟體 Software： </strong>PHOTOSHOP  ILLUSTRATOR  PROCREATE</p>
+            <p><strong>興趣 Interest： </strong>動漫 繪畫 設計 人物攝影 打排球</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Portfolio Categories -->
+    <section id="portfolio" class="py-5" style="background-image: url(images/abstract-white-liquid-marble-background-free-vector.jpg);">
+        <h2 class="text-center black-text" style="letter-spacing: 5px; color: black;"><strong>作品類別</strong></h2>
+        <h2 class="text-center black-text" style="letter-spacing: 5px; color: black;"><strong>ART CATEGORY</strong></h2>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="#DIGITAL ART" class="btn btn-outline-dark">DIGITAL ART</a>
+            <a href="#FINE ART" class="btn btn-outline-dark">FINE ART</a>
+            <a href="#3D MODELLING ART" class="btn btn-outline-dark">3D MODELLING ART</a>
+            <a href="#PHOTO WORK" class="btn btn-outline-dark">PHOTO WORK</a>
+            
+        </div>
+
+            <br>
+            <br>
+        <div class="row mt-4">
+     
+            <!-- Digital Art -->
+            <section id="DIGITAL ART" class="bg-digital-art" style="background-image: url(images/R.jpg);" >
+             <div class="text-center d-flex justify-content-center align-items-center flex-column" >
+                <br>
+                <h3><strong>電繪作品</strong></h3>
+                <h3><strong>- DIGITAL PAINTING -</strong></h3>
+                <div id="digitalCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/聖誕節fn.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images" >
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/hibiki1017.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#digitalCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#digitalCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                    <br>
+                    <a href="digital-gallery.html" class="btn btn-dark mt-2">ANOTHER WORK</a>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+        <div class="row mt-4">
+            
+            <!-- Hand-drawn Art -->
+            <section id="FINE ART" class="bg-hand-drawn" style="background-image: url(images/R.jpg);" >
+             <div class="text-center d-flex justify-content-center align-items-center flex-column">
+                <br>
+                <h3><strong>手繪作品</strong></h3>
+                <h3><strong>- FINE ART -</strong></h3>
+                <div id="handDrawnCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/IMG_20201013_211231.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/IMG_20201013_211115.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#handDrawnCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#handDrawnCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                    <br>
+                    <a href="hand-gallery.html" class="btn btn-dark mt-2">ANOTHER WORK</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <div class="row mt-4">    
+            <!-- 3D Art -->
+            <section id="3D MODELLING ART" class="bg-3d-art" style="background-image: url(images/R.jpg);" > 
+             <div class="text-center d-flex justify-content-center align-items-center flex-column">
+                <br>
+                <h3><strong>三維建模</strong></h3>
+                <h3><strong>- 3D ART -</strong></h3>
+                <div id="3DCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/場景渲染3.png" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/武器渲染1.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#3DCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#3DCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                    <br>
+                    <a href="3d-gallery.html" class="btn btn-dark mt-2">ANOTHER WORK</a>
+                    <br>
+
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row mt-4">
+
+            <!-- photo work -->
+            <section id="PHOTO WORK" class="bg-photo-work" style="background-image: url(images/R.jpg);" >
+             <div class="text-center d-flex justify-content-center align-items-center flex-column">
+                <br>
+                <h3><strong>攝影作品</strong></h3>
+                <h3><strong>- PHOTO WORK -</strong></h3>
+                <div id="photocarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/DSCF0029.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/DSCF0150.jpg" style=" border-radius: 20px" class="d-block w-100" alt="images">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#photocarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#photocarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+                    <br>
+                    <a href="photo-gallery.html" class="btn btn-dark mt-2">ANOTHER WORK</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Section 3: Footer -->
+    <footer id="contact" class="text-center p-4">
+        <h4>聯絡方式</h4>
+        <p>Email:zeronine1019@gmail.com</p>
+        <p>社交平台: 
+            <a href="https://www.facebook.com/junyan.tan.9/" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com/zero9_artwork/?hl=zh-tw" target="_blank">Instagram</a>
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="#intro" class="btn btn-outline-dark">回到頂部 RETURN TOP</a>
+        </div>
+    </footer>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>

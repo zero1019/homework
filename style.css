@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+
+section h2, section h3 {
+    color: #ffffff;
+}
+
+.carousel-item img {
+    height: 50%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+
+header {
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background: #ffffff;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(50px);
+}
+
+header img {
+    width: 100px; /* 調整每張圖片的大小 */
+    height: auto;
+    margin: 0 10px; /* 為圖片之間增加間距 */
+    object-fit: cover;
+    position: static; /* 讓圖片遵循正常的文檔流 */
+    pointer-events: none;
+}
+

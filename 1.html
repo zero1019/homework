@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滾動視差效果</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .parallax .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
+        .parallax-1 .bg {
+            background-image: url('images/hibiki1017.jpg'); /* 確保路徑正確 */
+        }
+
+        .parallax-2 .bg {
+            background-image: url('images/聖誕節fn.jpg'); /* 確保路徑正確 */
+        }
+
+        .parallax .text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            position: relative;
+            transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax parallax-1">
+        <div class="bg"></div>
+        <div class="text" id="text1">ZERO09 PORTFOLIO</div>
+    </div>
+    <div class="content">
+        <h1>About My Portfolio</h1>
+        <p>Welcome to my portfolio page, where you are welcome to get to know me and view my usual artworks.</p>
+    </div>
+    <div class="parallax parallax-2">
+        <div class="bg"></div>
+        <div class="text" id="text2">Welcome to share with each other</div>
+    </div>
+    <div class="content">
+        <p>If you like my style, you can find contact information at the bottom of the page and communicate with each other.</p>
+    </div>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
+
+            const text1 = document.getElementById("text1");
+            const text2 = document.getElementById("text2");
+
+            // 計算滾動偏移量
+            const offset1 = Math.min(scrollY / viewportHeight * 100, 100);
+            const offset2 = Math.min((scrollY - viewportHeight) / viewportHeight * 100, 100);
+
+            // 第一段文字滾動效果
+            if (scrollY < viewportHeight) {
+                text1.style.transform = `translateX(${offset1 * 5}px)`;
+                text1.style.opacity = 1 - offset1 / 100;
+            } else {
+                text1.style.opacity = 0;
+            }
+
+            // 第二段文字滾動效果
+            if (scrollY > viewportHeight && scrollY < viewportHeight * 2) {
+                text2.style.transform = `translateX(${offset2 * 5}px)`;
+                text2.style.opacity = 1 - offset2 / 100;
+            } else {
+                text2.style.opacity = 0;
+            }
+        });
+    </script>
+</body>
+</html>
