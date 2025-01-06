@@ -73,12 +73,13 @@
 
   </header>
   <div class="container mt-4">
-    <h1 class="text-center" style="color: black;"><strong>作品展示</strong></h1>
-    <div class="text-center mb-4"></div>
-  
-    <div id="test" class="d-flex flex-wrap justify-content-between">
+    <h1 class="text-center" style="color: black;" ><strong>作品展示</strong></h1>
+    <div class="text-center mb-4">
+    </div>
+
+    <div id="test" class="card-group">
       <!-- 卡片內容 -->
-      <div v-for="item in cards" :key="item.title" class="card mx-2" style="width: 18rem;">
+      <div v-for="item in cards"  class="card">
         <img :src="'images/' + item.imgSrc" class="card-img-top" alt="Illustration">
         <div class="card-body">
           <h5 class="card-title">{{ item.title }}</h5>

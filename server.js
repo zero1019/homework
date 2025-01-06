@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 var path = require("path");
 
 //web root
-server.use(express.static(__dirname));"html"
+server.use(express.static(path.join(__dirname, "html")));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
@@ -103,5 +103,5 @@ server.listen(80, ()=>{
     console.log("Server is running at port 80.");
 })
 server.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/html/index.html'));
+    res.sendFile(path.join(__dirname, '/html/webdesign.html'));
 });
