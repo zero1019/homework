@@ -6,8 +6,8 @@
     <title>我的作品集</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <script src="frontend.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         .card-group {
           display: flex;
@@ -56,8 +56,8 @@
         </div>
       </nav>
     <header id="TOP" class="text-center p-5">
-        <h1>3d建模作品 </h1>
-        <h1>3D ART</h1>
+        <h1>電腦繪圖作品 </h1>
+        <h1>DIGITAL PAINTING </h1>
        
     </header>
     <div class="container mt-4">
@@ -65,9 +65,9 @@
     <div class="text-center mb-4">
     </div>
 
-    <div id="test3d" class="card-group">
+    <div id="testphoto" class="card-group">
       <!-- 卡片內容 -->
-      <div v-for="item in tdart" class="card">
+      <div v-for="item in pdart" class="card">
         <img :src="'images/'+item.imgSrc" alt="Christmas Illustration">
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
@@ -76,38 +76,68 @@
         </div>
       </div>
 
-   <!-- <div class="card-group">
+ <!--   <div class="card-group">
+     
       <div class="card">
-        <img src="images/場景渲染3.png" alt="3d work1">
+        <img src="images/DSCF0029.jpg" alt="PHOTO 1">
         <div class="card-body">
-          <h5 class="card-title">JAPAN SHRINE</h5>a
-          <p class="card-text">I love Japanese culture and architecture, and I love the shrine that glows at night, so I made this 3D model</p>
+          <h5 class="card-title">BUBBLES GIRLS FIRST</h5>
+          <p class="card-text">When I was involved in a cosplay event, I accidentally saw a girl using a bubble gun to wrap bubbles around me, and I was attracted to this scene, so I recorded this scene</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img src="images/檯燈材質渲染2.jpg" alt="3d work2">
+        <img src="images/DSCF0078.jpg" alt="PHOTO 2">
         <div class="card-body">
-          <h5 class="card-title">LAMP</h5>
-          <p class="card-text">As a basis for exercising 3D modeling skills, a topic with easier difficulty was chosen, hence the creation of this table lamp</p>
+          <h5 class="card-title">BUBBLES GIRLS second</h5>
+          <p class="card-text">When I was involved in a cosplay event, I accidentally saw a girl using a bubble gun to wrap bubbles around me, and I was attracted to this scene, so I recorded this scene</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img src="images/武器渲染3.jpg" alt="3d work3">
+        <img src="images/DSCF0115.jpg" alt="PHOTO 3">
         <div class="card-body">
-          <h5 class="card-title">KATANA</h5>
-          <p class="card-text">I love Japanese culture and architecture, and I love the samurai katana, so I made this 3D model</p>
+          <h5 class="card-title">CUTE GIRLS</h5>
+          <p class="card-text">This iss a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
-    -->
+      -->
       
       <!-- 更多卡片... -->
     </div>
   </div>
 
+  <!-- 上傳表單 Modal -->
+  <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadModalLabel">上傳新作品</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="uploadForm">
+            <div class="mb-3">
+              <label for="title" class="form-label" style="color: black;">作品標題</label>
+              <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label" style="color: black;">作品描述</label>
+              <textarea class="form-control" id="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label" style="color: black;">選擇圖片</label>
+              <input type="file" class="form-control" id="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="vue.js"></script>
+<script src="bs5vue.js"></script>
 </html>

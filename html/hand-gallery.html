@@ -6,7 +6,8 @@
     <title>我的作品集</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="frontend.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         .card-group {
           display: flex;
@@ -31,8 +32,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="images/OIP.jpg" alt="LOGO" style="height: 40px;">
-       </a>
+             <img src="images/OIP.jpg" alt="LOGO" style="height: 40px;">
+        </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -55,8 +56,8 @@
         </div>
       </nav>
     <header id="TOP" class="text-center p-5">
-        <h1>電腦繪圖作品 </h1>
-        <h1>DIGITAL PAINTING </h1>
+        <h1>純美術作品 </h1>
+        <h1>FINE ART </h1>
        
     </header>
     <div class="container mt-4">
@@ -64,9 +65,9 @@
     <div class="text-center mb-4">
     </div>
 
-    <div id="test" class="card-group">
+    <div id="testfine" class="card-group">
       <!-- 卡片內容 -->
-      <div v-for="item in Services" class="card">
+      <div v-for="item in fdart" class="card">
         <img :src="'images/'+item.imgSrc" alt="Christmas Illustration">
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
@@ -75,67 +76,39 @@
         </div>
       </div>
 
-   <!-- v-for="item in Services"  <div class="card">
-        <img src="images/聖誕節fn.jpg" alt="Christmas Illustration">
+  <!--  <div class="card-group">
+       卡片內容 
+      <div class="card">
+        <img src="images/IMG_20201013_211115.jpg" alt="HAND1">
         <div class="card-body">
-          <h5 class="card-title">MERRY CHRISTMAS</h5>
-          <p class="card-text">This artwork embodies the joy and warmth of the holiday season. Featuring a fox-eared girl dressed in festive red alongside a majestic white dog, it highlights themes of companionship and celebration under a sparkling night sky filled with soft, glowing lights.</p>
+          <h5 class="card-title">AUTUMN</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img src="images/hibiki1017.jpg" alt="Hibiki Artwork">
+        <img src="images/IMG_20201013_211231.jpg" alt="HAND2">
         <div class="card-body">
-          <h5 class="card-title">HIBIKI</h5>
-          <p class="card-text">This piece depicts an angelic character surrounded by autumn leaves, symbolizing freedom and harmony with nature. The vibrant sky and playful floating creatures emphasize a whimsical, uplifting mood, representing the beauty and change of the autumn season.</p>
+          <h5 class="card-title">RED APPLE</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img src="images/fubiki生日賀圖.png" alt="fubuki Artwork">
+        <img src="images/chuang.png" alt="HAND3">
         <div class="card-body">
-          <h5 class="card-title">FUBUKI</h5>
-          <p class="card-text">This illustration captures the essence of winter serenity. It portrays a cheerful fox girl relaxing in a snowy forest, blending her playful and vibrant personality with the peaceful winter atmosphere. The sleeping fox and the snowy details add warmth to the otherwise cold setting.</p>
+          <h5 class="card-title">VIEW FROM THE WINDOW</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
--->
-      
+      -->
       <!-- 更多卡片... -->
-    </div>
-  </div>
-
-  <!-- 上傳表單 Modal -->
-  <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="uploadModalLabel">上傳新作品</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="uploadForm">
-            <div class="mb-3">
-              <label for="title" class="form-label" style="color: black;">作品標題</label>
-              <input type="text" class="form-control" id="title" required>
-            </div>
-            <div class="mb-3">
-              <label for="description" class="form-label" style="color: black;">作品描述</label>
-              <textarea class="form-control" id="description" rows="3" required></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="image" class="form-label" style="color: black;">選擇圖片</label>
-              <input type="file" class="form-control" id="image" accept="image/*" required>
-            </div>
-            <button type="submit" class="btn btn-primary">提交</button>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 
 
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="vue.js"></script>
+<script src="bs5vue.js"></script>
 </html>

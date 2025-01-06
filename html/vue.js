@@ -3,11 +3,11 @@ const {createApp,ref}  = Vue;
 var myService = createApp({
     data() {
         return{
-            Services:[
+           /* Services:[
                 {imgSrc: "聖誕節fn.jpg",title:"MERRY CHRISTMAS",text:"This artwork embodies the joy and warmth of the holiday season. Featuring a fox-eared girl dressed in festive red alongside a majestic white dog, it highlights themes of companionship and celebration under a sparkling night sky filled with soft, glowing lights."},
                 {imgSrc: "hibiki1017 copy.jpg",title:"HIBIKI",text:"This piece depicts an angelic character surrounded by autumn leaves, symbolizing freedom and harmony with nature. The vibrant sky and playful floating creatures emphasize a whimsical, uplifting mood, representing the beauty and change of the autumn season."},
                 {imgSrc: "fubiki生日賀圖.png",title:"FUBUKI",text:"This illustration captures the essence of winter serenity. It portrays a cheerful fox girl relaxing in a snowy forest, blending her playful and vibrant personality with the peaceful winter atmosphere. The sleeping fox and the snowy details add warmth to the otherwise cold setting."},
-            ]
+            ]*/
         }
     }
 }).mount("#test")
